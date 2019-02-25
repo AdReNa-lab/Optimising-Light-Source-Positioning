@@ -17,7 +17,7 @@ affiliations:
  - name: Department of Chemical Engineering, University College London, Torrington Place, London WC1E 7JE, U.K.
    index: 1
 date: 26 September 2018
-bibliography: LED_paper.bib
+bibliography: paper.bib
 ---
 # Summary
 The position of light sources within an imaging system has significant consequences for the downstream usability of the data it generates. Non-uniform illumination can contribute to low quality (or in some cases unusable) images, particularly so when illumination variation approaches or exceeds the sensitivity range of the capture device/camera. Similarly, low flux efficiency (i.e. flux through imaging plane divided by total flux from source) will negatively affect the image acquisition and subsequent analysis. Often flux efficiency is sacrificed for illumination uniformity i.e. choosing to deliver less light to the target such that the variation of light intensity across the target remains low. The large number of possible positional configurations of a light source within an imaging system precludes manual optimisation. 
@@ -47,4 +47,4 @@ In summary, this software can screen large numbers of possible variable values f
 
 N.M.F. acknowledges the EPSRC for support under a Doctoral Training Partnership (EP/M507970/1).
 
-
+# References
