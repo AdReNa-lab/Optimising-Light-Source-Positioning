@@ -20,9 +20,11 @@ date: 26 September 2018
 bibliography: paper.bib
 ---
 # Summary
+Designing imaging systems is a challenge faced by researchers in many fields including fluorescent imaging in life sciences and optical set-ups for automated capture of experimental data.  
+
 The position of light sources within an imaging system has significant consequences for the downstream usability of the data it generates. Non-uniform illumination can contribute to low quality (or in some cases unusable) images, particularly so when illumination variation approaches or exceeds the sensitivity range of the capture device/camera. Similarly, low flux efficiency (i.e. ratio of flux through the imaging plane divided by the total flux from the source) will negatively affect the image acquisition and subsequent analysis. Often flux efficiency is sacrificed for illumination uniformity i.e. choosing to deliver less light to the target in order to keep the variation of light intensity across the target remains low. Furthermore, the large number of possible positional configurations of a light source within an imaging system precludes manual optimisation. 
 
-To tackle this issue, we offer a software for modelling the illumination profile for a given light source. The code can be easily adjusted to model a variety of positional configuration and rapidly calculates results for many thousands of variable combinations.
+To tackle this issue, we offer a software for modelling the illumination profile for a given light source. The code can be easily adjusted to model a variety of positional configurations and rapidly calculates results for many thousands of variable combinations.  We envisage the exploitation of this software by researchers as well as those in the early stages of prototyping.  For example, in the university environment where resources and time are limited.  
 
 ![](Figure1.png)
 **Figure 1:**  Light source position and illumination profile. **a)** Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables. **b)** Illumination profile for a single light source denoted by the circle on the bottom left of the plot. **c)** Illumination profile for a system with four active light sources denoted by the black circles on the plot.  The details of the variable values for these light sources are summarized in a legend on the bottom left of the plot. 
