@@ -26,6 +26,7 @@ To tackle this issue, we offer a software for modelling the illumination profile
 
 ![](Figure1.png)
 **Figure 1:**  Light source position and illumination profile. **a)** Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables. **b)** Illumination profile for a single light source denoted by the circle on the bottom left of the plot. **c)** Illumination profile for a system with four active light sources denoted by the black circles on the plot.  The details of the variable values for these light sources are summarized in a legend on the bottom left of the plot. 
+
 Furthermore, we demonstrate an approach by which a user can reduce the amount of possible multi-variable combinations down to the most viable options. This is performed using a modified convex hull approach in two-dimensions (optimising for two figures of merit, i.e. the total flux and the illumination variation). In principle, this method can be extended to n-dimensional space to include additional figures of merit for optimisation.
 
 Our model describes positions of a light source in Cartesian coordinates (x, y and z) relative to the centre of the illuminated area. The spatial region available for light source placement must be chosen by the user. In addition, the user defines a range of allowed angles of illumination in Polar coordinates (theta and phi) relative to the surface normal (see Figure 1a).
@@ -39,7 +40,7 @@ We provide a method for filtering these configurations to select settings with t
 ![](Figure2-2.png)
 **Figure 2:**  Demonstration of convex hull based data filtering.  **a)** The figures of merit, total flux  and illumination variation (standard deviation), define the axes against which every parameter-combination is mapped (forming a cloud). The modified convex hull (boundary) of the candidate population is shown in blue.  **b)** A zoomed-in view of a.  **c)** Tolerance values of 0.05 for total flux and 10<sup>-6</sup> were applied; this allowed for additional points that lay within these tolerances to be selected by the modified convex hull.  
   
-Finally, our supplied plotting function enables the user to visually check the illumination profile and the relative positions of the light sources to ensure the results are acceptable (see Figure 1b&c).  In summary, this software can screen large numbers of possible variable values for the positioning of the light sources with respect to  total flux and uniformity. This will allow a user to design an optimised light array for their imaging system without requiring numerous, time-consuming experimental measurements.
+Finally, our supplied plotting function enables the user to visually check the illumination profile and the relative positions of the light sources to ensure the results are acceptable (see Figure 1b&c).  In summary, this software can screen large numbers of possible variable values for the positioning of the light sources with respect to total flux and uniformity. This will allow a user to design an optimised light array for their imaging system without requiring numerous, time-consuming experimental measurements.
 
 # Acknowledgements
 
