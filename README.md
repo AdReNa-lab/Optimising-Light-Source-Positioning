@@ -9,10 +9,15 @@ To install the software, please download “Optimising_Light_Sources.zip” and 
 
 In order to run this software the following files are required:
 Optimising_Light_Source_Positioning.m
+
 Create_Variable_Combinations.m 
+
 Exclude_Unallowed_Combinations.m 
+
 Illumination_Calculations.m 
+
 Convhull_Option_Reduction.m 
+
 Plot_Save_Results.m
 
 Optimising_Light_Source_Positioning.m is the main function file from which the entire code is run.  Within this file are instructions to the user for each step advising them where to make changes to adapt the code to their specific needs.  
