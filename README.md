@@ -51,7 +51,7 @@ To report bugs or seek support please open an issue on this repository.  Contrib
 
 ## Example Usage & Automated Test
 
-A system is being designed to image thin layer chromatography plates which are 100 x 80mm in size.  The imaging device is to be placed at the centre of the system at a height of 110mm.  The maximum dimensions of the system are 200 x 160mm.  Four LED light sources are available which will be placed around the system across two axes of symmetry.  It is desired to determine the optimal position of the light sources to provide even illumination while maintaining sufficient flux to acheive high quality images.  Running the software as is should produce the same results as this example.  
+A system is being designed to image thin layer chromatography (TLC) plates which are 100 x 80mm in size.  The imaging device is to be placed at the centre of the system at a height of 110mm.  The maximum dimensions of the system are 200 x 160mm.  Four LED light sources are available which will be placed around the system across two axes of symmetry.  It is desired to determine the optimal position of the light sources to provide even illumination while maintaining sufficient flux to acheive high quality images.  Running the software as is should produce the same results as this example.  
 
 <p align="center">
     <img src="https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png" width="300">
@@ -61,7 +61,6 @@ A system is being designed to image thin layer chromatography plates which are 1
 To reduce the computing time, a coarse investigation of the positional configurations was performed first.  
 
 **Step 1**
-
 In Optimising_Light_Source_Positioning.m, the following limits and resolutions were provided for each variable.  **Note:** The centre of the system should lie at the (0,0,0) point in the cartesian coordinate system.  
 
 ```
@@ -108,3 +107,13 @@ V5 = [  0,   0, 110];
 The software then determines if any of the combinations lie within this pyramid and excludes them from further consideration.  To further reduce the computational time, any configuration in which the principle axis of the light source does not intersect the illuminated area can be excluded.  The user provides the vertices of the illuminated area (which may be different from the region being imaged) and Exclude_Unallowed_Combinations.m removes these configurations.  Subsequently, only 260 feasible combinations remain for investiation.  
 
 **Step 3**
+Next the software will calculated the illumination profile for each configuration.  In the main function file (Optimising_Light_Source_Positioning.m) the user provides the far field data as well as the limits for the area of interest along with a resolution for the x and y directions.
+
+```
+X_limit = 50;
+X_Resolution = 1;
+Y_limit = 40;
+Y_Resolution = 1;
+```
+
+As the width of the TLC plate is 100 x 80mm the region of interest will extend from -50 to 50 mm along the x-axis and from -40 to 40 mm along the y-axis.  A resolution of 1mm was chosen; therefore, the flux will be calculated for 1mm<sup>2</sup>.  
