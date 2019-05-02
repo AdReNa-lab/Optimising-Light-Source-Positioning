@@ -18,9 +18,7 @@ To install the software, please download “Optimising_Light_Sources.zip” and 
 
 In order to run this software the following files are required:
 * Optimising_Light_Source_Positioning.m
-  
-  test test
-...test test 
+    test test
 * Create_Variable_Combinations.m 
 * Exclude_Unallowed_Combinations.m 
 * Illumination_Calculations.m 
