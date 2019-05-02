@@ -28,6 +28,10 @@ The position of the light source is defined in Cartesian coordinates relative to
 
 **Exclude_Unallowed_Combinations.m**
 
+The function Exclude_Unallowed_Combinations.m works to exclude positional configurations that are unfeasible.  The code is currently written such that any positional configuration that will block the field of view of the imaging device will be eliminated.  Furthermore, any configuration in which the principle axis of the light source does not intersect with the illuminated area (as defined by the user in the Exclude_Unallowed_Combinations.m) are deemed unsuitable and removed from the matrix of positional configurations.  
+
+**Far_Field_Data.mat**
+
 
 
 **Illumination_Calculations.m**
