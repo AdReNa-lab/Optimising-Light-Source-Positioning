@@ -20,12 +20,19 @@ In order to run this software the following files are required:
 
 **Optimising_Light_Source_Positioning.m**
     
-    This is the main function file for the software.  In this file, the user provides the required information for each of the following functions. 
-* Create_Variable_Combinations.m 
-* Exclude_Unallowed_Combinations.m 
-* Illumination_Calculations.m 
-* Convhull_Option_Reduction.m 
-* Plot_Save_Results.m
+This is the main function file for the software.  In this file, the user provides the required information for each of the following functions. This includes but is not limited to the ranges for each positional variable, details regarding the imaging system specifications such as the size of the illuminated area and the position of the camera, and the tolerances for selecting the most viable configurations.  Documentation within this file advises the user where to change the code to adapt it to their specific needs. 
+
+**Create_Variable_Combinations.m**
+
+The position of the light source is defined in Cartesian coordinates relative to the centre of the illuminated area.  Further to this, a range of allowed angles of illumination in Polar coordinates (theta and phi) relative to the surface normal must be provided by the user.  The user provides limits and resolution for each of these varialbes in the main function file.  Create_Variable_Combinations.m then takes this information and generates a matrix of all possible positional configurations.  
+
+**Exclude_Unallowed_Combinations.m**
+
+
+
+**Illumination_Calculations.m**
+**Convhull_Option_Reduction.m** 
+**Plot_Save_Results.m**
 
 Optimising_Light_Source_Positioning.m is the main function file from which the entire code is run.  Within this file are instructions to the user for each step advising them where to make changes to adapt the code to their specific needs.  
 
