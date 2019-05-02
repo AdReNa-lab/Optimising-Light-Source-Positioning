@@ -52,7 +52,36 @@ A system is being designed to image thin layer chromatography plates which are 1
 <p align="center">
     <img src="https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png" width="300">
 </p>
+**Figure 1:**  Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables.
 
+To reduce the computing time, a coarse investigation of the positional configurations was performed first.  In Optimising_Light_Source_Positioning.m, the following limits and resolutions were provided for each variable.  **Note:** The centre of the system should lie at the (0,0,0) point in the cartesian coordinate system.  
+
+```
+%Theta, enter in degrees
+theta_range_interval = 30;
+theta_range_lower_limit = 0;
+theta_range_upper_limit = 90;
+
+%Phi, enter in degrees
+phi_range_interval = 30;
+phi_range_lower_limit = 0;
+phi_range_upper_limit = 90;
+
+%X-Position
+x_interval = 30;
+x_lower_limit = -100;
+x_upper_limit = -10;
+
+%Y-Position 
+y_interval = 20;
+y_lower_limit = -80;
+y_upper_limit = -10;
+
+%Height above illuminated surface (z-position)
+H_interval = 25;
+H_lower_limit = 10;
+H_upper_limit = 110;
+```
 
 ## Contribution Guidelines
 
