@@ -47,7 +47,8 @@ To visualise the illumination profile of the remaining positional configureation
 
 ## Example usage
 
-![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png | width=100)
+<img src="https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png" width="48">
+
 
 ## Contribution Guidelines
 
