@@ -26,7 +26,7 @@ The position of light sources within an imaging system has significant consequen
 
 To tackle this issue, we offer a software for modelling the illumination profile for a given light source. The code can be easily adjusted to model a variety of positional configurations and rapidly calculates results for many thousands of variable combinations.  We envisage the exploitation of this software by researchers as well as those in the early stages of prototyping.  For example, in the university environment where resources and time are limited.  
 
-![](Figure1.png)
+![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Figure1.png)
 **Figure 1:**  Light source position and illumination profile. **a)** Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables. **b)** Illumination profile for a single light source denoted by the circle on the bottom left of the plot. **c)** Illumination profile for a system with four active light sources denoted by the black circles on the plot.  The details of the variable values for these light sources are summarized in a legend on the bottom left of the plot. 
 
 Furthermore, we demonstrate an approach by which a user can reduce the amount of possible multi-variable combinations down to the most viable options. This is performed using a modified convex hull approach in two-dimensions (optimising for two figures of merit, i.e. the total flux and the illumination variation). In principle, this method can be extended to n-dimensional space to include additional figures of merit for optimisation.
