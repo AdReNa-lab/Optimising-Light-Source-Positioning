@@ -58,7 +58,11 @@ A system is being designed to image thin layer chromatography plates which are 1
 </p>
 **Figure 1:**  Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables.
 
-To reduce the computing time, a coarse investigation of the positional configurations was performed first.  In Optimising_Light_Source_Positioning.m, the following limits and resolutions were provided for each variable.  **Note:** The centre of the system should lie at the (0,0,0) point in the cartesian coordinate system.  
+To reduce the computing time, a coarse investigation of the positional configurations was performed first.  
+
+**Step 1**
+
+In Optimising_Light_Source_Positioning.m, the following limits and resolutions were provided for each variable.  **Note:** The centre of the system should lie at the (0,0,0) point in the cartesian coordinate system.  
 
 ```
 %Theta, enter in degrees
@@ -86,7 +90,10 @@ H_interval = 25;
 H_lower_limit = 10;
 H_upper_limit = 110;
 ```
-Create_Variable_Combinations.m uses this information and will produce 1280 possible configurations; however, not all of these are practical.  There exists a rectangular pyramid wherein the placement of a light source would obstruct the view from the imaging device.  The verticies of this pyramid correspond to the vertices of the area being imaged and the position of the imaging device.  These are provided in Exclude_Unallowed_Combinations.m.
+Create_Variable_Combinations.m uses this information and will produce 1280 possible configurations; however, not all of these are practical.  
+
+**Step 2**  
+In step 2, the impractical configurations are removed from consideration.  There exists a rectangular pyramid wherein the placement of a light source would obstruct the view from the imaging device.  The verticies of this pyramid correspond to the vertices of the area being imaged and the position of the imaging device.  These are provided in Exclude_Unallowed_Combinations.m.
 
 ```
 %Vertices of the domain (rectangle) being imaged
@@ -100,3 +107,4 @@ V5 = [  0,   0, 110];
  
 The software then determines if any of the combinations lie within this pyramid and excludes them from further consideration.  To further reduce the computational time, any configuration in which the principle axis of the light source does not intersect the illuminated area can be excluded.  The user provides the vertices of the illuminated area (which may be different from the region being imaged) and Exclude_Unallowed_Combinations.m removes these configurations.  Subsequently, only 260 feasible combinations remain for investiation.  
 
+**Step 3**
