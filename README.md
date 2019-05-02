@@ -36,7 +36,7 @@ In order to calculate the illumination profile, the far field data for the light
 
 **Illumination_Calculations.m**
 
-Illimination_Calculations.m uses the far field data as well as user provided values to calculate the illumination profile for the light sources in each positional configureation.  In the main function file, the user must provide the name of the varialbe containing the far field data as well as the size of the illuminated area.  Additionally, the user provides the x and y resolution which defines the coarseness of the grid as well as the area over which the flux is calculated.  The position of the camera must also be provided.  
+Illimination_Calculations.m uses the far field data as well as user provided values to calculate the illumination profile for the light sources in each positional configureation.  In the main function file, the user must provide the name of the varialbe containing the far field data as well as the size of the illuminated area.  Additionally, the user provides the x and y resolution which defines the coarseness of the grid as well as the area over which the flux is calculated.  The position of the camera must also be provided.  This function file assumes that there are four identical light sources positioned across two lines of symmetry.  This can be adjusted as needed.  
 
 **Convhull_Option_Reduction.m** 
 
@@ -45,7 +45,7 @@ standard deviation to broaden the domain of selected configurations.
 
 **Plot_Save_Results.m**
 
-
+To visualise the illumination profile of the remaining positional configureations, Plot_Save_Results.m will provide a colormap represening illumination profile and the relative positions of the light sources.  It will also provide the positional information of the light source, the total flux, and the standard deviation of the flux.    
 
 ## Example usage
 
