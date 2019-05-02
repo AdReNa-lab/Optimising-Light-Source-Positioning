@@ -17,9 +17,10 @@ This software was designed for Matlab R2018a (Version 9.4) and requires the foll
 To install the software, please download “Optimising_Light_Sources.zip” and extract all of the files to the same folder. 
 
 In order to run this software the following files are required:
-* Optimising_Light_Source_Positioning.m
 
-    test test
+**Optimising_Light_Source_Positioning.m**
+    
+    This is the main function file for the software.  In this file, the user provides the required information for each of the following functions. 
 * Create_Variable_Combinations.m 
 * Exclude_Unallowed_Combinations.m 
 * Illumination_Calculations.m 
