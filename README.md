@@ -47,6 +47,8 @@ To visualise the illumination profile of the remaining positional configureation
 
 ## Example usage
 
+A system is being designed to image thin layer chromatography plates which are 100 x 80mm in size.  The imaging device is to be placed at the centre of the system at a height of 110mm.  The maximum dimensions of the system are 200 x 160mm.  Four LED light sources are available which will be placed around the system across two axes of symmetry.  It is desired to determine the optimal position of the light sources to provide even illumination while maintaining sufficient flux to acheive high quality images.  
+
 <p align="center">
     <img src="https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png" width="300">
 </p>
