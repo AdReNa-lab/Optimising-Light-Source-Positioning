@@ -32,13 +32,20 @@ The function Exclude_Unallowed_Combinations.m works to exclude positional config
 
 **Far_Field_Data.mat**
 
-
+In order to calculate the illumination profile, the far field data for the light source is required.  This is usually provided by the manufacturer.  The data should be presented as a two column matrix where the first column is the angle (in degrees ranging from -90 to 90) from the principle axis and the second column is the relative intensity.  The data should be saved as Far_Field_Data.mat or the name of the variable should be modified in the main function file.  
 
 **Illumination_Calculations.m**
+
+Illimination_Calculations.m uses the far field data as well as user provided values to calculate the illumination profile for the light sources in each positional configureation.  In the main function file, the user must provide the name of the varialbe containing the far field data as well as the size of the illuminated area.  Additionally, the user provides the x and y resolution which defines the coarseness of the grid as well as the area over which the flux is calculated.  The position of the camera must also be provided.  
+
 **Convhull_Option_Reduction.m** 
+
+Convhull_Option_Reduction.m uses a modified convex hull operation to reduce the full matrix of positional configurations to only the most viable by using two figures of merit: the total flux and the standard deviation.  The user can decide to use absolute standard deviation or standard deviation as a percentage of the mean flux.  As standard deviation is not necessarily a perfect descriptor for uniformity, additional data points may be of interest. Therefore, the user can provide tolerance values for both total radiant flux and
+standard deviation to broaden the domain of selected configurations.
+
 **Plot_Save_Results.m**
 
-Optimising_Light_Source_Positioning.m is the main function file from which the entire code is run.  Within this file are instructions to the user for each step advising them where to make changes to adapt the code to their specific needs.  
+
 
 ## Example usage
 
