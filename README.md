@@ -12,7 +12,7 @@ This software was designed for Matlab R2018a (Version 9.4) and requires the foll
 * Parallel Computing Toolbox
 * MATLAB Distributed Computing Server
 
-## Installation instructions
+## Installation Instructions
 
 In order to install and run this software the following files must be downloaded and saved to the same folder:
 
@@ -43,11 +43,15 @@ standard deviation to broaden the domain of selected configurations.
 
 **Plot_Save_Results.m**
 
-To visualise the illumination profile of the remaining positional configureations, Plot_Save_Results.m will provide a colormap represening illumination profile and the relative positions of the light sources.  It will also provide the positional information of the light source, the total flux, and the standard deviation of the flux.    
+To visualise the illumination profile of the remaining positional configureations, Plot_Save_Results.m will provide a colormap represening illumination profile and the relative positions of the light sources.  It will also provide the positional information of the light source, the total flux, and the standard deviation of the flux.   
 
-## Example usage
+## Contribution Guidelines
 
-A system is being designed to image thin layer chromatography plates which are 100 x 80mm in size.  The imaging device is to be placed at the centre of the system at a height of 110mm.  The maximum dimensions of the system are 200 x 160mm.  Four LED light sources are available which will be placed around the system across two axes of symmetry.  It is desired to determine the optimal position of the light sources to provide even illumination while maintaining sufficient flux to acheive high quality images.  
+To report bugs or seek support please open an issue on this repository.  Contributions to the software are welcome; please open an issue for further discussion. 
+
+## Example Usage & Automated Test
+
+A system is being designed to image thin layer chromatography plates which are 100 x 80mm in size.  The imaging device is to be placed at the centre of the system at a height of 110mm.  The maximum dimensions of the system are 200 x 160mm.  Four LED light sources are available which will be placed around the system across two axes of symmetry.  It is desired to determine the optimal position of the light sources to provide even illumination while maintaining sufficient flux to acheive high quality images.  Running the software as is should produce the same results as this example.  
 
 <p align="center">
     <img src="https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png" width="300">
@@ -82,7 +86,17 @@ H_interval = 25;
 H_lower_limit = 10;
 H_upper_limit = 110;
 ```
+Create_Variable_Combinations.m uses this information and will produce 1280 possible configurations; however, not all of these are practical.  There exists a rectangular pyramid wherein the placement of a light source would obstruct the view from the imaging device.  The verticies of this pyramid correspond to the vertices of the area being imaged and the position of the imaging device.  These are provided in Exclude_Unallowed_Combinations.m.
 
-## Contribution Guidelines
+```
+%Vertices of the domain (rectangle) being imaged
+V1 = [-50, -40,   0];
+V2 = [-50,  40,   0];
+V3 = [ 50,  40,   0];
+V4 = [ 50, -40,   0];
+%Position of the imaging device
+V5 = [  0,   0, 110];
+```
+ 
+The software then determines if any of the combinations lie within this pyramid and excludes them from further consideration.  To further reduce the computational time, any configuration in which the principle axis of the light source does not intersect the illuminated area can be excluded.  The user provides the vertices of the illuminated area (which may be different from the region being imaged) and Exclude_Unallowed_Combinations.m removes these configurations.  Subsequently, only 260 feasible combinations remain for investiation.  
 
-To report bugs or seek support please open an issue on this repository.  Contributions to the software are welcome; please open an issue for further discussion.  
