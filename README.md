@@ -139,7 +139,7 @@ Standard_Deviation_Tolerance = 10^-8;
 
 This process further reduces the number of viable configurations from 260 to 26 as shown in Figure 2. 
 
-![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Convhull_reduction.png)
+
 **Figure 2:**  The figures of merit,
 total flux and illumination variation (standard deviation), define the axes against which every parameter-combination is mapped (forming a cloud). The modified convex hull (boundary) of the candidate population is shown in blue and circled.  The values which have been selected based on the user provided tolerances are shown in blue.  
 
