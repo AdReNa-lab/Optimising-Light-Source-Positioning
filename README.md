@@ -122,7 +122,6 @@ Camera_Position = [0, 0, 110];
 As the width of the TLC plate is 100 x 80 mm the region of interest will extend from -50 to 50 mm along the x-axis and from -40 to 40 mm along the y-axis.  A resolution of 1 mm was chosen; therefore, the flux will be calculated for 1 mm<sup>2</sup>.  The resulting structure, Illumination_Data contains the values for each variable along with the associated total flux, standard deviation, and standard deviation as a percentage of the mean flux.  
 
 **Step 4**
-
 In order to choose an optimal illumination configuration, the set of all parameter combinations must be filtered down according to specific figures of merit.  Within this step, we provide a method for the user to refine the their data set.  Our code uses a modified convex hull method to select configurations which maximize total flux for a given standard deviation.  
 
 The descriptors used to determine how strong and uniform the illumination is are total flux and standard deviation respectively.  Standard deviation is provided both as an absolute value and as a percentage of the mean flux.  The user may select which will be more suitable for their optimisation
