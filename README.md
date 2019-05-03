@@ -60,7 +60,7 @@ A system is being designed to image thin layer chromatography (TLC) plates which
 
 To reduce the computing time, a coarse investigation of the positional configurations was performed first.  
 
-**Step 1**
+**Step 1**  
 In Optimising_Light_Source_Positioning.m, the following limits and resolutions were provided for each variable.  **Note:** The centre of the system should lie at the (0,0,0) point in the cartesian coordinate system.  
 
 ```
