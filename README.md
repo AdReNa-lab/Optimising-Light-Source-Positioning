@@ -106,7 +106,7 @@ V5 = [  0,   0, 110];
  
 The software then determines if any of the combinations lie within this pyramid and excludes them from further consideration.  To further reduce the computational time, any configuration in which the principle axis of the light source does not intersect the illuminated area can be excluded.  The user provides the vertices of the illuminated area (which may be different from the region being imaged) and Exclude_Unallowed_Combinations.m removes these configurations.  Subsequently, only 260 feasible combinations remain for investiation.  
 
-**Step 3**
+**Step 3**  
 Next the software will calculated the illumination profile for each configuration.  In the main function file (Optimising_Light_Source_Positioning.m) the user provides the far field data as well as the limits for the area of interest along with a resolution for the x and y directions and the position of the camera.
 
 ```
@@ -121,7 +121,7 @@ Camera_Position = [0, 0, 110];
 
 As the width of the TLC plate is 100 x 80 mm the region of interest will extend from -50 to 50 mm along the x-axis and from -40 to 40 mm along the y-axis.  A resolution of 1 mm was chosen; therefore, the flux will be calculated for 1 mm<sup>2</sup>.  The resulting structure, Illumination_Data contains the values for each variable along with the associated total flux, standard deviation, and standard deviation as a percentage of the mean flux.  
 
-**Step 4**
+**Step 4**  
 In order to choose an optimal illumination configuration, the set of all parameter combinations must be filtered down according to specific figures of merit.  Within this step, we provide a method for the user to refine the their data set.  Our code uses a modified convex hull method to select configurations which maximize total flux for a given standard deviation.  
 
 The descriptors used to determine how strong and uniform the illumination is are total flux and standard deviation respectively.  Standard deviation is provided both as an absolute value and as a percentage of the mean flux.  The user may select which will be more suitable for their optimisation
@@ -142,5 +142,5 @@ This process further reduces the number of viable configurations from 260 to 26 
 **Figure 2:**  The figures of merit,
 total flux and illumination variation (standard deviation), define the axes against which every parameter-combination is mapped (forming a cloud). The modified convex hull (boundary) of the candidate population is shown in blue and circled.  The values which have been selected based on the user provided tolerances are shown in blue.  
 
-**Step 5**
+**Step 5**  
 The remaining options provided after the modified convhull method was applied can be further reduced based upon user restrictions for minimum total flux or maximum standard deviation.  Furthermore, these final configurations are few enough in number to be plotted without requiring undue computational resources and evaluated by the user.  
