@@ -139,8 +139,11 @@ Standard_Deviation_Tolerance = 10^-8;
 This process further reduces the number of viable configurations from 260 to 26 as shown in Figure 2. 
 
 ![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Convhull_Reduction1.png)
-**Figure 2:**  The figures of merit,
-total flux and illumination variation (standard deviation), define the axes against which every parameter-combination is mapped (forming a cloud). The modified convex hull (boundary) of the candidate population is shown in blue and circled.  The values which have been selected based on the user provided tolerances are shown in blue.  
+**Figure 2:**  The figures of merit, total flux and illumination variation (standard deviation), define the axes against which every parameter-combination is mapped (forming a cloud). The modified convex hull (boundary) of the candidate population is shown in blue and circled.  The values which have been selected based on the user provided tolerances are shown in blue.  
 
 **Step 5**  
 The remaining options provided after the modified convhull method was applied can be further reduced based upon user restrictions for minimum total flux or maximum standard deviation.  Furthermore, these final configurations are few enough in number to be plotted without requiring undue computational resources and evaluated by the user.  
+
+![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Illumination_Pattern_Options.png)
+**Figure 3:**  Illumination profiles for systems with four active light sources denoted by the black circles on the plot. The details of the variable values for these light sources are summarized in a legend on the bottom left of the plot.  These plots represent configureation options 1, 6, 8, & 11. 
+
