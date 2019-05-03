@@ -134,10 +134,10 @@ As total flux and standard deviation (as an absolute value or a percentage of th
 ```
 Std_Dev_Selector = 1;
 Total_Flux_Tolerance = 5*10^-6;
-Standard_Deviation_Tolerance = 10^8;
+Standard_Deviation_Tolerance = 10^-8;
 ```
 
-This process further reduces the number of viable configurations from 260 to 27 as shown in Figure 2. 
+This process further reduces the number of viable configurations from 260 to 26 as shown in Figure 2. 
 
 ![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Convhull_reduction.png)
 **Figure 2:**  The figures of merit,
