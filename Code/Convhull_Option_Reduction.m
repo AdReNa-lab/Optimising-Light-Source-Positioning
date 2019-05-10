@@ -1,7 +1,6 @@
 function [Illumination_Data_Reduced] = Convhull_Option_Reduction(...
     Illumination_Data, Std_Dev_Selector, Total_Flux_Tolerance, ...
     Standard_Deviation_Tolerance)
-
 %Overview:  
 %   Convhull_Option_Reduction.m uses a modified convex hull operation to 
 %   reduce the full matrix of positional configurations to only the most 
