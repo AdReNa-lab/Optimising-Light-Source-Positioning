@@ -1,4 +1,53 @@
-function [Illumination_Data] = Illumination_Calculations(Combinations, Far_Field_Data, Illuminated_Area_Limits, Flux_Data, Camera_Position)
+function [Illumination_Data] = Illumination_Calculations(Combinations, ...
+    Far_Field_Data, Illuminated_Area_Limits, Flux_Data, Camera_Position)
+
+%Overview:
+%   Illumination_Calculations.m uses the far field data as well as user 
+%   provided values to calculate the illumination profile for the light 
+%   sources in each positional configuration. 
+%
+%Inputs:
+%   Combinations
+%       The matrix (Combinations) is obtained from
+%       Exclude_Unallowed_Combinations.m.  It contains the positional
+%       information for each feasible positional configuration.  
+%
+%   Far_Field_Data
+%       The far field data is required for the calculation, this will
+%       typically be provided by the supplier of the light source (or
+%       measured using a goniophotometer).  It should be a two column array
+%       where the first column is the angle and the second is the relative
+%       intensity.  The name of this array must be Far_Field_Data.  
+%
+%   Illuminated_Area_Limits
+%       The user must provide the size of the illuminated area as well as
+%       the x and y resolution which defines the coarseness of the grid and
+%       the area over which the flux is calculated.  These user inputs are
+%       provided in Optimising_Light_Source_Positioning.m and combined into
+%       the vector, Illuminated_Area_Limits. 
+%
+%   Flux_Data
+%       When screening a large number of possible configurations, saving
+%       all the flux data becomes cumbersome due to the large amount of
+%       information.  Therefore, the flux data is not automatically saved.
+%       If the user wishes to save this data (in the case where only a few
+%       configurations are being investigated) the Flux_Data variable
+%       should be set to 1, otherwise it should remain as 0. 
+%
+%   Camera_Position
+%       The position of the camera must also be provided in x,y,z 
+%       coordinates.
+%
+%Output:
+%   Illumination_Data
+%       This is a structure containing the positional information for each
+%       combination as well as the respective values for total flux,
+%       standard deviation, and the standard deviation as a percentage of
+%       the mean flux.  
+%
+%Note:  This function file assumes that there are four identical light
+%sources positioned across two lines of symmetry. This can be adjusted as
+%needed.
 
 %Set up structure for data
 Illumination_Data = struct;
@@ -38,7 +87,8 @@ data_Std_Perc = zeros(number_combinations, 1);
 %is not recommended to record this data when investigating large number of
 %combinations.  
 if Flux_Data == 1
-    data_Flux_total = zeros(length(y_grid)-1, length(x_grid)-1, number_combinations);
+    data_Flux_total = zeros(length(y_grid)-1, length(x_grid)-1,...
+        number_combinations);
 end
 
 theta_combinations = Combinations(:,1);
@@ -77,7 +127,8 @@ parfor option = 1:number_combinations
             y = (y_grid(j) + y_grid(j+1))/2;
 
             %Determines the distance from the source
-            true_distance_from_source = pdist2([x, y, 0], [x_position, y_position, height]);
+            true_distance_from_source = pdist2([x, y, 0], [x_position,...
+                y_position, height]);
             
             %Determines the reduction in intensity from the source due to
             %distance
@@ -86,7 +137,8 @@ parfor option = 1:number_combinations
             %Determines the angle from the central beam of light to the
             %grid position
             v1 = [x, y, 0] - [x_position, y_position, height];
-            v2 = [light_centre_x, light_centre_y, 0] - [x_position, y_position, height];
+            v2 = [light_centre_x, light_centre_y, 0] - [x_position,...
+                y_position, height];
             CosTheta = dot(v1,v2)/(norm(v1)*norm(v2));
             Angle_from_source = acos(CosTheta);
 
@@ -94,14 +146,18 @@ parfor option = 1:number_combinations
             Angle_from_source_deg = Angle_from_source*180/pi;
             
             %Locates the points nearest to this angle in the far field
-            %data and linearly interpolates as needed. If the angle exceeds that provided by the far field
-            %data, the value of the relative intensity drop is assumed to
-            %be equal to zero.
+            %data and linearly interpolates as needed. If the angle exceeds 
+            %that provided by the far field data, the value of the relative
+            %intensity drop is assumed to be equal to zero.
             if Angle_from_source_deg <= max(Far_Field_x)
                 high = find(Far_Field_x >= Angle_from_source_deg, 1);
-                low = find(Far_Field_x <= Angle_from_source_deg, 1, 'last');
+                low = find(Far_Field_x <= Angle_from_source_deg, 1,...
+                    'last');
 
-                Intensity_angle = Far_Field_y(high) + (Angle_from_source_deg - Far_Field_x(high))*((Far_Field_y(low)-Far_Field_y(high))/(Far_Field_x(low)-Far_Field_x(high)));
+                Intensity_angle = Far_Field_y(high) +...
+                    (Angle_from_source_deg - Far_Field_x(high))*...
+                    ((Far_Field_y(low)-Far_Field_y(high))/...
+                    (Far_Field_x(low)-Far_Field_x(high)));
             else
                 Intensity_angle = 0;
             end
@@ -141,7 +197,7 @@ parfor option = 1:number_combinations
             
             Cos_Image_rule = dot(v1, v2);
             
-            %Lambert’s cosine emission law is applied 
+            %Lambertâ€™s cosine emission law is applied 
             Flux(j,i) = Flux(j,i)*Cos_Image_rule;
             
         end
@@ -155,7 +211,8 @@ parfor option = 1:number_combinations
     Flux2 = flipud(Flux);
     Flux3 = fliplr(Flux);
     Flux4 = flipud(fliplr(Flux)); %#ok<FLUDLR>
-	%The comment above prevents a Matlab warning regarding efficiency of line 157
+	%The comment above prevents a Matlab warning regarding efficiency of 
+    %line 157
 	
     %The total flux is the sum of that of each light source
     Flux_total = Flux1+Flux2+Flux3+Flux4;
@@ -170,7 +227,8 @@ parfor option = 1:number_combinations
     %Records all the results for each combination investigated 
     data_Std_Dev(option) = std2(Flux_total); 
     data_Total_Flux(option) = sum(sum(Flux_total));
-    data_Std_Perc(option) = data_Std_Dev(option)/mean(mean(Flux_total))*100;
+    data_Std_Perc(option) = data_Std_Dev(option)/mean(mean(Flux_total))...
+        *100;
     
     if Flux_Data == 1
         data_Flux_total(:,:, option) = Flux_total;
