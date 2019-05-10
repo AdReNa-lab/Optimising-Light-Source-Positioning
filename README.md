@@ -17,6 +17,16 @@ This software was designed for Matlab R2018a (Version 9.4) and requires the foll
 
 In order to install and run this software the following files must be downloaded and saved to the same folder:
 
+* Optimising_Light_Source_Positioning.m
+* Create_Variable_Combinations.m
+* Exclude_Unallowed_Combinations.m
+* Far_Field_Data.mat
+* Illumination_Calculations.m
+* Convhull_Option_Reduction.m
+* Plot_Save_Results.m
+
+## Function Descriptions
+
 **Optimising_Light_Source_Positioning.m**
     
 This is the main function file for the software.  In this file, the user provides the required information for each of the following functions. This includes but is not limited to the ranges for each positional variable, details regarding the imaging system specifications such as the size of the illuminated area and the position of the camera, and the tolerances for selecting the most viable configurations.  Documentation within this file advises the user where to change the code to adapt it to their specific needs. 
