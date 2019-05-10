@@ -1,5 +1,4 @@
 function [Combinations] = Create_Variable_Combinations(Input_Variables)
-
 %Overview: 
 %   Create_Variable_Combinations.m uses the information the user provides
 %   about the possible range of positions and generates a matrix of all
