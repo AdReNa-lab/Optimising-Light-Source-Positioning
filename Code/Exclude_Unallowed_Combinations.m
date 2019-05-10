@@ -1,15 +1,33 @@
 function [Combinations] = Exclude_Unallowed_Combinations(Combinations) 
 
-%This section of code is used to remove combinations that are unfeasible or
-%not permitted within the physical constraints of the system.  Do NOT use
-%this file without reviewing the constraints and adjusting them for the
-%system in question.
+%Overview: 
+%   Exclude_Unallowed_Combinations.m works to exclude positional
+%   configurations that are unfeasible. The code is currently written such
+%   that any positional configuration that will block the field of view of
+%   the imaging device will be eliminated. Furthermore, any configuration
+%   in which the principle axis of the light source does not intersect with
+%   the illuminated area (as defined by the user in this function file) are
+%   deemed unsuitable and removed from the matrix of positional
+%   configurations.  
+%
+%Input:
+%   Combinations
+%       This matrix is provided by Create_Variable_Combinations.m.  It is a
+%       matrix containing all possible positional configurations.
+%
+%Output:
+%   Combinations
+%       This matrix is the reduced matrix of positional configurations
+%       based on the user provided criteria.
+%
+%Note:  Do NOT use this file without reviewing the constraints and 
+%adjusting them for the system in question.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%For a rectangular imaging target, there exists a rectangular pyramid in which
-%the light source cannot be placed or it will obstruct the view of the 
-%imaging device.  
+%For a rectangular imaging target, there exists a rectangular pyramid in
+%which the light source cannot be placed or it will obstruct the view of 
+%the imaging device.  
 
 %%%Remove combinations that lie inside the rectangular pyramid%%%
 
