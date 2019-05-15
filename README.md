@@ -69,6 +69,7 @@ A system is being designed to image thin layer chromatography (TLC) plates which
 <p align="center">
     <img src="https://raw.githubusercontent.com/adrena-lab/Optimising-Light-Source-Positioning/Code/Figures/Schematic.png" width="300">
 </p>
+
 **Figure 1:**  Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables.
 
 To reduce the computing time, a coarse investigation of the positional configurations was performed first.  
