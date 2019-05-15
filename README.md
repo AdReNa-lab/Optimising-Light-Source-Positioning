@@ -67,7 +67,7 @@ To report bugs or seek support please open an issue on this repository.  Contrib
 A system is being designed to image thin layer chromatography (TLC) plates which are 100 x 80mm in size.  The imaging device is to be placed at the centre of the system at a height of 110mm.  The maximum dimensions of the system are 200 x 160mm.  Four LED light sources are available which will be placed around the system across two axes of symmetry.  It is desired to determine the optimal position of the light sources to provide even illumination while maintaining sufficient flux to achieve high quality images.  Running the software as is should produce the same results as this example.  
 
 <p align="center">
-    <img src="https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Schematic.png" width="300">
+    <img src="https://raw.githubusercontent.com/adrena-lab/Optimising-Light-Source-Positioning/Code/Figures/Schematic.png" width="300">
 </p>
 **Figure 1:**  Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables.
 
@@ -151,13 +151,13 @@ Standard_Deviation_Tolerance = 10^-8;
 
 This process further reduces the number of viable configurations from 260 to 26 as shown in Figure 2. 
 
-![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Convhull_Reduction1.png)
+![](https://raw.githubusercontent.com/adrena-lab/Optimising-Light-Source-Positioning/Code/Figures/Convhull_Reduction1.png)
 **Figure 2:**  The figures of merit, total flux and illumination variation (standard deviation), define the axes against which every parameter-combination is mapped (forming a cloud). The modified convex hull (boundary) of the candidate population is shown in blue and circled.  The values which have been selected based on the user provided tolerances are shown in blue.  
 
 **Step 5**  
 The remaining options provided after the modified convhull method was applied can be further reduced based upon user restrictions for minimum total flux or maximum standard deviation.  Furthermore, these final configurations are few enough in number to be plotted without requiring undue computational resources and evaluated by the user.  Examples of these illumination profiles are shown in Figure 3. 
 
-![](https://github.com/adrena-lab/Optimising-Light-Source-Positioning/blob/Code/Figures/Illumination_Pattern_Options1.png)
+![](https://raw.githubusercontent.com/adrena-lab/Optimising-Light-Source-Positioning/Code/Figures/Illumination_Pattern_Options1.png)
 **Figure 3:**  Illumination profiles for systems with four active light sources denoted by the black circles on the plot. The details of the variable values for these light sources are summarized in a legend on the bottom left of the plot.  These plots represent configuration options 1, 6, 8, & 11. 
 
 The configuration options shown in Figure 3 show increasing standard deviation and total flux from a to b.  Option 8 appeared to provide a good balance between flux efficiency and uniformity.  Therefore, a more in depth analysis could be performed in the vicinity of the light source positions in option 8. 
