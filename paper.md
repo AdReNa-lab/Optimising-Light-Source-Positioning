@@ -30,7 +30,7 @@ Furthermore, we demonstrate an approach by which a user can reduce the amount of
 
 Our model describes positions of a light source in Cartesian coordinates (x, y and z) relative to the centre of the illuminated area. The spatial region available for light source placement must be chosen by the user. In addition, the user defines a range of allowed angles of illumination in Polar coordinates (theta and phi) relative to the surface normal (see Figure 1a).
 
-![](https://raw.githubusercontent.com/adrena-lab/Optimising-Light-Source-Positioning/Code/Figures/Figure1.png)
+![](https://raw.githubusercontent.com/adrena-lab/Optimising-Light-Source-Positioning/Code/Figures/Figure1-1.png)
 **Figure 1:**  Light source position and illumination profile. **a)** Schematic illustrating the placement of the light source relative to the illuminated area with all relevant variables. **b)** Illumination profile for a single light source denoted by the circle on the bottom left of the plot. **c)** Illumination profile for a system with four active light sources. 
 
 Based on these user inputs, the software creates a set of illumination configurations.  These are then tested for feasibility with regard to the requirements and limitations of the imaging device. This pre-filtering process can also be augmented by the user to suit the needs of their particular system.
